@@ -61,7 +61,9 @@ def all_protocols_servient():
                 "observable": True,
                 "type": "string"
             }
-        }
+        },
+        "security": "nosec_sc",
+        "securityDefinitions": {"nosec_sc": {"scheme": "nosec"}},
     }
 
     td = ThingDescription(td_dict)
