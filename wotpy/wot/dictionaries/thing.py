@@ -81,11 +81,6 @@ class ThingFragment(WotBaseDict):
         assert set(fields_readonly + fields_str + fields_dict +
                    fields_list + fields_instance) == fields
 
-    # def __init__(self, *args, **kwargs):
-    #     super().__init__(args, kwargs)
-    #     for security in self.security:
-    #         assert security in self.security_definitions
-
     def __setattr__(self, name, value):
         """Checks to see if the attribute that is being set is a
         Thing fragment property and updates the internal dict."""

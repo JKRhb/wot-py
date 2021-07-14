@@ -45,17 +45,13 @@ class InteractionFragmentDict(WotBaseDict):
             for key, val in six.iteritems(self._init.get("uriVariables"))
         }
 
-    # @property
-    # def security(self):
-    #     """Set of security configurations, provided as an array,
-    #     that must all be satisfied for access to resources at or
-    #     below the current level, if not overridden at a lower level."""
+    @property
+    def security(self):
+        """Set of security configurations, provided as an array,
+        that must all be satisfied for access to resources at or
+        below the current level, if not overridden at a lower level."""
 
-    #     if "security" not in self._init:
-    #         return None
-
-    #     return [SecuritySchemeDict.build(item) for item in self._init.get("security")]
-
+        return self._init.get("security")
 
 class PropertyFragmentDict(InteractionFragmentDict):
     """A dictionary wrapper class that contains data to initialize a Property."""
